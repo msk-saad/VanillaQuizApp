@@ -2,34 +2,33 @@ const questions = [
   {
     question: "Which of the following is NOT a valid HTTP method?",
     answers: [
-      {text: "GET", correct: false},
-      {text: "POST", correct: false},
-      {text: "FETCH", correct: true},
-      {text: "DELETE", correct: false}
+      { text: "GET", correct: false },
+      { text: "POST", correct: false },
+      { text: "FETCH", correct: true },
+      { text: "DELETE", correct: false }
     ]
   },
 
   {
     question: "In python, which is the correct way to define a function?",
     answers: [
-      {text: "function myFunction()", correct: false},
-      {text: "def myFunction()", correct: true},
-      {text: "fun myFunction()", correct: false},
-      {text: "func myFunction()", correct: false}
+      { text: "function myFunction()", correct: false },
+      { text: "def myFunction()", correct: true },
+      { text: "fun myFunction()", correct: false },
+      { text: "func myFunction()", correct: false }
     ]
   },
 
   {
     question: "In SQL, which keyword is used to remove duplicate rows from a query result?",
     answers: [
-      {text: "REMOVE", correct: false},
-      {text: "DISTINCT", correct: true},
-      {text: "DELETE", correct: false},
-      {text: "DROP", correct: false}
+      { text: "REMOVE", correct: false },
+      { text: "DISTINCT", correct: true },
+      { text: "DELETE", correct: false },
+      { text: "DROP", correct: false }
     ]
   }
 ];
-
 
 const questionElement = document.getElementById('questions');
 const answerBtn = document.getElementById('answer-btn');
@@ -81,9 +80,9 @@ function selectAnswer(e) {
   }
 
   Array.from(answerBtn.children).forEach(button => {
-    if(button.dataset.correct === "true") {
+    if (button.dataset.correct === "true") {
       button.classList.add("correct");
-    } 
+    }
     button.disabled = true;
   });
   nextBtn.style.display = "block";
@@ -91,7 +90,7 @@ function selectAnswer(e) {
 
 function nextButton() {
   currentQuestionIndex++;
-  if(currentQuestionIndex < questions.length) {
+  if (currentQuestionIndex < questions.length) {
     showQuestion();
   } else {
     showScore();
